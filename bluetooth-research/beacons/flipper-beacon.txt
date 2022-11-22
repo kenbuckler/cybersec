@@ -1,0 +1,10 @@
+Flipper Beacon
+RANDOM ADDRESS
+CONNECTABLE
+
+Name: Flipper <Random>
+Device Type: LE only
+Advertising type: Legacy
+
+Service UUID:
+00003082-0000-1000-8000-00805f9b34fb

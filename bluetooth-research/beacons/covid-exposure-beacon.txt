@@ -1,0 +1,13 @@
+Covid Exposure Beacon
+RANDOM ADDRESS
+NON-CONNECTABLE
+
+Name: N/A
+Device Type: LE only
+Advertising type: Legacy
+Service UUID: 0000fd6f-0000-1000-8000-00805f9b34fb
+
+Exposure Notification:
+Service Data:
+UUID: 0000fd6f-0000-1000-8000-00805f9b34fb
+Data (HEX): 0xA1EF5CBDD806E5D01AE4F2C4332DD9A6199F251A

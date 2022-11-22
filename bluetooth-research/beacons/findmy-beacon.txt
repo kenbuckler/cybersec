@@ -1,0 +1,14 @@
+Find My Beacon
+RANDOM ADDRESS
+NON-CONNECTABLE
+
+Name: N/A
+Device Type: LE only
+Advertising type: Legacy
+
+Manufacturer Data:
+16-Bit Company Identifier:
+0x004C
+
+Data (HEX):
+0x12020002

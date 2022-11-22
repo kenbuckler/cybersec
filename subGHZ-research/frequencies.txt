@@ -3,13 +3,23 @@ For details on RX and TX capabilities, see https://docs.flipperzero.one/sub-ghz/
 
 FCC Frequency Explorer can be very useful for identifying unknown frequencies, see https://fccid.io/frequency-explorer.php
 
+Note for RFID Tags:
+UHF RFID tag frequncies listed below typically are passive RFID tags and require an active reader broadcasting a signal which is either backscattered or responded to on a different frequncy by the RFID tag. This means you'll only be able to pick up the UHF RFID tags below when they pass close enough to an active reader. The tags are only activated when the broadcast from an active reader is strong enough to energize the RFID tag. This effect was used by the Soviet Union in the last 1940's to build a passive listening device which only transmitted audio when energized by an outside radio signal source. You can read more at https://hackaday.com/2015/12/08/theremins-bug/
+
 **** 300-348 MHz ****
 
 **** 387-464 MHz ****
 
+**Short Range RFID Tags - 3–300 ft range
+433 - Short range devices - Defense applications, Underground Miner Tracking with active tags
+
 **Common Cellular Phone Frequencies - commonly detected as spikes in Spectrum Analyzer
-410.2-419.8 GSM 410 T-GSM, UPLINK
-410-446.5 CDMA 5,450 UPLINK, CDMA 11,400 MHz PAMR UPLINK
+410.2-419.8 - GSM 410 T-GSM, UPLINK
+410-446.5 - CDMA 5,450 UPLINK, CDMA 11,400 MHz PAMR UPLINK
 
 
 **** 779-928 MHz ****
+
+**ISM Band RFID Tags - 3–40 ft range
+865–868 (Europe) - EAN, various standards; used by railroads
+902–928 (North America) - EAN, various standards; used by railroads, Gen 2 UHF 902-928 MHz RFID Tags

@@ -1,0 +1,1 @@
+The logs in this folder are raw connection logs at the debug level when interacting with various Bluetooth devices.

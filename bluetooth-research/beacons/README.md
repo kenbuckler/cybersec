@@ -1,0 +1,1 @@
+IMPORTANT: The beacons in this folder are not machine-readable format.

@@ -1,0 +1,111 @@
+nRF Connect, 2022-10-27
+ResMed 500825 (80:4B:50:E2:C5:C0)
+V	17:06:27.591	Connecting to 80:4B:50:E2:C5:C0...
+D	17:06:27.591	gatt = device.connectGatt(autoConnect = false, TRANSPORT_LE, preferred PHY = LE 1M)
+D	17:06:29.881	[Broadcast] Action received: android.bluetooth.device.action.ACL_CONNECTED
+D	17:06:29.888	[Callback] Connection state changed with status: 0 and new state: CONNECTED (2)
+I	17:06:29.888	Connected to 80:4B:50:E2:C5:C0
+V	17:06:29.897	Discovering services...
+D	17:06:29.897	gatt.discoverServices()
+D	17:06:41.501	[Callback] Services discovered with status: 0
+I	17:06:41.501	Services discovered
+V	17:06:41.509	Generic Attribute (0x1801)
+- Service Changed [I] (0x2A05)
+   Client Characteristic Configuration (0x2902)
+- Database Hash [R] (0x2B2A)
+- Client Supported Features [R W] (0x2B29)
+Generic Access (0x1800)
+- Device Name [R W] (0x2A00)
+- Appearance [R] (0x2A01)
+Device Information (0x180A)
+- Manufacturer Name String [R] (0x2A29)
+- Model Number String [R] (0x2A24)
+- Firmware Revision String [R] (0x2A26)
+- Software Revision String [R] (0x2A28)
+Unknown Service (948652e2-d03b-11e8-a8d5-f2801f1b9fd1)
+- Unknown Characteristic [R] (3d5085ac-d8a2-4a56-8d2e-1dc7508e67bc)
+- Unknown Characteristic [R] (1681c44f-2798-4bfa-b11a-65e9f55c2082)
+- Unknown Characteristic [R] (e5e33ba4-c823-4a86-9b15-1bf2acb27a1c)
+Unknown Service (0000fd56-0000-1000-8000-00805f9b34fb)
+- Unknown Characteristic [W WNR] (a6220002-35f1-4b20-afae-cb089d2044aa)
+- Unknown Characteristic [N] (a6220003-35f1-4b20-afae-cb089d2044aa)
+   Client Characteristic Configuration (0x2902)
+D	17:06:41.509	gatt.setCharacteristicNotification(00002a05-0000-1000-8000-00805f9b34fb, true)
+D	17:06:41.511	gatt.setCharacteristicNotification(a6220003-35f1-4b20-afae-cb089d2044aa, true)
+V	17:06:49.347	Reading descriptor 00002902-0000-1000-8000-00805f9b34fb
+D	17:06:49.347	gatt.readDescriptor(00002902-0000-1000-8000-00805f9b34fb)
+I	17:06:52.809	Read Response received from descr. 00002902-0000-1000-8000-00805f9b34fb, value: (0x) 00-00
+A	17:06:52.809	"Notifications and indications disabled" received
+V	17:06:54.669	Reading characteristic 00002b2a-0000-1000-8000-00805f9b34fb
+D	17:06:54.669	gatt.readCharacteristic(00002b2a-0000-1000-8000-00805f9b34fb)
+I	17:06:55.636	Read Response received from 00002b2a-0000-1000-8000-00805f9b34fb, value: (0x) 4B-CD-39-7D-24-7E-F5-7C-82-47-49-82-35-78-B2-B7
+A	17:06:55.636	"(0x) 4B-CD-39-7D-24-7E-F5-7C-82-47-49-82-35-78-B2-B7" received
+V	17:06:57.481	Reading characteristic 00002b29-0000-1000-8000-00805f9b34fb
+D	17:06:57.481	gatt.readCharacteristic(00002b29-0000-1000-8000-00805f9b34fb)
+I	17:06:58.806	Read Response received from 00002b29-0000-1000-8000-00805f9b34fb, value: (0x) 00
+A	17:06:58.806	"No features" received
+V	17:07:03.692	Reading characteristic 00002a00-0000-1000-8000-00805f9b34fb
+D	17:07:03.692	gatt.readCharacteristic(00002a00-0000-1000-8000-00805f9b34fb)
+I	17:07:04.215	Read Response received from 00002a00-0000-1000-8000-00805f9b34fb, value: (0x) 52-65-73-4D-65-64-20-44-65-76-69-63-65, "ResMed Device"
+A	17:07:04.215	"ResMed Device" received
+V	17:07:06.071	Reading characteristic 00002a01-0000-1000-8000-00805f9b34fb
+D	17:07:06.071	gatt.readCharacteristic(00002a01-0000-1000-8000-00805f9b34fb)
+I	17:07:06.750	Read Response received from 00002a01-0000-1000-8000-00805f9b34fb, value: (0x) 00-00
+A	17:07:06.750	"[0] Unknown" received
+I	17:07:08.265	Connection parameters updated (interval: 7.5ms, latency: 0, timeout: 5000ms)
+I	17:07:09.262	Connection parameters updated (interval: 48.75ms, latency: 0, timeout: 5000ms)
+V	17:07:10.457	Reading characteristic 00002a29-0000-1000-8000-00805f9b34fb
+D	17:07:10.457	gatt.readCharacteristic(00002a29-0000-1000-8000-00805f9b34fb)
+I	17:07:10.967	Read Response received from 00002a29-0000-1000-8000-00805f9b34fb, value: (0x) 52-65-73-4D-65-64-20-50-74-79-20-4C-74-64, "ResMed Pty Ltd"
+A	17:07:10.967	"ResMed Pty Ltd" received
+V	17:07:12.251	Reading characteristic 00002a24-0000-1000-8000-00805f9b34fb
+D	17:07:12.251	gatt.readCharacteristic(00002a24-0000-1000-8000-00805f9b34fb)
+I	17:07:12.527	Read Response received from 00002a24-0000-1000-8000-00805f9b34fb, value: (0x) 33-39-34-32-31, "39421"
+A	17:07:12.527	"39421" received
+V	17:07:13.492	Reading characteristic 00002a26-0000-1000-8000-00805f9b34fb
+D	17:07:13.492	gatt.readCharacteristic(00002a26-0000-1000-8000-00805f9b34fb)
+I	17:07:13.599	Read Response received from 00002a26-0000-1000-8000-00805f9b34fb, value: (0x) 53-54-32-39-30-2E-32-2E-31-32-2E-33-2E-31-35-31-2E-35, "ST290.2.12.3.151.5"
+A	17:07:13.599	"ST290.2.12.3.151.5" received
+V	17:07:17.022	Reading characteristic 00002a28-0000-1000-8000-00805f9b34fb
+D	17:07:17.022	gatt.readCharacteristic(00002a28-0000-1000-8000-00805f9b34fb)
+I	17:07:17.256	Read Response received from 00002a28-0000-1000-8000-00805f9b34fb, value: (0x) 53-57-30-34-36-30-30-2E-30-33-2E-34-2E-31-2E-30-2E-31-35-33-38-30-32-34-30-64, "SW04600.03.4.1.0.15380240d"
+A	17:07:17.256	"SW04600.03.4.1.0.15380240d" received
+V	17:07:19.666	Reading characteristic 3d5085ac-d8a2-4a56-8d2e-1dc7508e67bc
+D	17:07:19.666	gatt.readCharacteristic(3d5085ac-d8a2-4a56-8d2e-1dc7508e67bc)
+I	17:07:19.791	Read Response received from 3d5085ac-d8a2-4a56-8d2e-1dc7508e67bc, value: (0x) 53-54-32-38-39, "ST289"
+A	17:07:19.791	"(0x) 53-54-32-38-39, "ST289"" received
+V	17:07:22.835	Reading characteristic 1681c44f-2798-4bfa-b11a-65e9f55c2082
+D	17:07:22.835	gatt.readCharacteristic(1681c44f-2798-4bfa-b11a-65e9f55c2082)
+I	17:07:22.911	Read Response received from 1681c44f-2798-4bfa-b11a-65e9f55c2082, value: (0x) 53-54-32-39-30, "ST290"
+A	17:07:22.911	"(0x) 53-54-32-39-30, "ST290"" received
+V	17:07:23.852	Reading characteristic e5e33ba4-c823-4a86-9b15-1bf2acb27a1c
+D	17:07:23.852	gatt.readCharacteristic(e5e33ba4-c823-4a86-9b15-1bf2acb27a1c)
+I	17:07:23.934	Read Response received from e5e33ba4-c823-4a86-9b15-1bf2acb27a1c, value: (0x) 35, "5"
+A	17:07:23.934	"(0x) 35, "5"" received
+V	17:07:29.250	Reading descriptor 00002902-0000-1000-8000-00805f9b34fb
+D	17:07:29.250	gatt.readDescriptor(00002902-0000-1000-8000-00805f9b34fb)
+I	17:07:29.442	Read Response received from descr. 00002902-0000-1000-8000-00805f9b34fb, value: (0x) 00-00
+A	17:07:29.442	"Notifications and indications disabled" received
+V	17:07:56.703	Enabling notifications for a6220003-35f1-4b20-afae-cb089d2044aa
+D	17:07:56.703	gatt.setCharacteristicNotification(a6220003-35f1-4b20-afae-cb089d2044aa, true)
+D	17:07:56.705	gatt.writeDescriptor(00002902-0000-1000-8000-00805f9b34fb, value=0x0100)
+I	17:07:56.938	Data written to descr. 00002902-0000-1000-8000-00805f9b34fb, value: (0x) 01-00
+A	17:07:56.938	"Notifications enabled" sent
+V	17:07:56.942	Notifications enabled for a6220003-35f1-4b20-afae-cb089d2044aa
+I	17:07:57.183	Notification received from a6220003-35f1-4b20-afae-cb089d2044aa, value: (0x) BE-BA-FE-CA-92-03-26-00-A9-7A-92-11-30-E3-58-A8-7B-22-6A-73-6F-6E-72-70-63-22-3A-22-32-2E-30-22-2C-22-6D-65-74-68-6F-64-22-3A-22-48-65-61-72-74-42-65-61-74-22-7D
+A	17:07:57.183	"(0x) BE-BA-FE-CA-92-03-26-00-A9-7A-92-11-30-E3-58-A8-7B-22-6A-73-6F-6E-72-70-63-22-3A-22-32-2E-30-22-2C-22-6D-65-74-68-6F-64-22-3A-22-48-65-61-72-74-42-65-61-74-22-7D" received
+I	17:07:57.184	Notification received from a6220003-35f1-4b20-afae-cb089d2044aa, value: (0x) BE-BA-FE-CA-92-03-26-00-A9-7A-92-11-30-E3-58-A8-7B-22-6A-73-6F-6E-72-70-63-22-3A-22-32-2E-30-22-2C-22-6D-65-74-68-6F-64-22-3A-22-48-65-61-72-74-42-65-61-74-22-7D
+A	17:07:57.184	"(0x) BE-BA-FE-CA-92-03-26-00-A9-7A-92-11-30-E3-58-A8-7B-22-6A-73-6F-6E-72-70-63-22-3A-22-32-2E-30-22-2C-22-6D-65-74-68-6F-64-22-3A-22-48-65-61-72-74-42-65-61-74-22-7D" received
+V	17:08:02.009	Disabling notifications for a6220003-35f1-4b20-afae-cb089d2044aa
+D	17:08:02.009	gatt.setCharacteristicNotification(a6220003-35f1-4b20-afae-cb089d2044aa, false)
+D	17:08:02.010	gatt.writeDescriptor(00002902-0000-1000-8000-00805f9b34fb, value=0x0000)
+I	17:08:03.958	Data written to descr. 00002902-0000-1000-8000-00805f9b34fb, value: (0x) 00-00
+A	17:08:03.958	"Notifications and indications disabled" sent
+V	17:08:03.963	Notifications and indications disabled for a6220003-35f1-4b20-afae-cb089d2044aa
+V	17:08:17.943	Disconnecting...
+D	17:08:17.943	gatt.disconnect()
+D	17:08:17.951	[Callback] Connection state changed with status: 0 and new state: DISCONNECTED (0)
+I	17:08:17.951	Disconnected
+D	17:08:21.828	[Broadcast] Action received: android.bluetooth.device.action.ACL_DISCONNECTED
+D	17:08:21.864	gatt.close()
+D	17:08:21.868	wait(200)

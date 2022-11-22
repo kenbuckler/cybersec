@@ -22,4 +22,4 @@ UHF RFID tag frequncies listed below typically are passive RFID tags and require
 
 **ISM Band RFID Tags - 3–40 ft range
 865–868 (Europe) - EAN, various standards; used by railroads
-902–928 (North America) - EAN, various standards; used by railroads, Gen 2 UHF 902-928 MHz RFID Tags
+902–928 (North America) - various standards; used by railroads, Gen 2 UHF 902-928 MHz RFID Tags

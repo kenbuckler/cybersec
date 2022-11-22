@@ -1,0 +1,15 @@
+This file catalogs frequencies discovered through Flipper Zero research.
+For details on RX and TX capabilities, see https://docs.flipperzero.one/sub-ghz/frequencies
+
+FCC Frequency Explorer can be very useful for identifying unknown frequencies, see https://fccid.io/frequency-explorer.php
+
+**** 300-348 MHz ****
+
+**** 387-464 MHz ****
+
+**Common Cellular Phone Frequencies - commonly detected as spikes in Spectrum Analyzer
+410.2-419.8 GSM 410 T-GSM, UPLINK
+410-446.5 CDMA 5,450 UPLINK, CDMA 11,400 MHz PAMR UPLINK
+
+
+**** 779-928 MHz ****

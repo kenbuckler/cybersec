@@ -1,0 +1,23 @@
+Win10 Beacon
+RANDOM ADDRESS
+NON-CONNECTABLE
+
+Name: N/A
+Device Type: LE only
+Advertising type: Legacy
+
+Microsoft Advertising Beacon
+Scenario Type: Advertising Beacon <0x01>
+Version: 0
+Device Type: Windows 10 Desktop
+Flags: 0x00 (version: 1)
+Reserved: 0x02
+Salt: 0x02AAE0874
+Device Hash:0x4E1E77A0931C916FB0A78A8F5D87304A71B89D
+
+Manufacturer Data:
+16-Bit Company Identifier:
+0x0006
+
+Data (HEX):
+0x010920022AAE08744E1E77A0931C916FB0A78A8F5D87304A71B89D

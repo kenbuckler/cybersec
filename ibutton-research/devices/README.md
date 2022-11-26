@@ -1,0 +1,1 @@
+This folder contains real iButton devices, or templates created from those devices

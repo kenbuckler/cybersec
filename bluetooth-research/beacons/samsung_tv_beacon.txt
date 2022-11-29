@@ -1,0 +1,14 @@
+Samsung TV Beacon
+RANDOM ADDRESS
+CONNECTABLE
+
+Name: N/A
+Device Type: LE only
+Advertising type: Legacy
+
+Manufacturer Data:
+16-Bit Company Identifier:
+0x0075
+
+Data (HEX):
+0x021821A11C45E54B4317F1AA506809D911F35898B5

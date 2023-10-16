@@ -1,0 +1,15 @@
+This file catalogs frequencies discovered through traditional RF scanner research.
+
+FCC Frequency Explorer can be very useful for identifying unknown frequencies, see https://fccid.io/frequency-explorer.php
+
+**** 520-1710 kHz - AM Band ****
+
+**** 118-138 MHz - AIR Band **** 
+
+**** 64-108 MHz - FM Band ****
+
+**** 30.0-199.975 MHz - VHF Band ****
+
+**** 3.20-21.95 MHz - Shortwave Band ****
+
+**** 162.40-162.55 MHz - Weather Band ****

@@ -3,6 +3,7 @@ This file catalogs frequencies discovered through traditional RF scanner researc
 FCC Frequency Explorer can be very useful for identifying unknown frequencies, see https://fccid.io/frequency-explorer.php
 
 **** 520-1710 kHz - AM Band ****
+NOTE: Standard band is 540-1700 kHz, any stations outside this range are "interesting"
 
 **** 3.20-21.95 MHz - Shortwave Band ****
 

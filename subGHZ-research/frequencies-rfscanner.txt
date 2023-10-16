@@ -7,9 +7,156 @@ FCC Frequency Explorer can be very useful for identifying unknown frequencies, s
 **** 3.20-21.95 MHz - Shortwave Band ****
 
 **** 64-108 MHz - FM Band ****
+NOTE: Standard band is 88-108 MHz, any stations below 88 MHz "interesting"
 
 **** 30.0-199.975 MHz - VHF Band ****
 
+**Common Business Frequencies - RadioReference.com**
+30.840-43.040
+151.505-158.400
+
+**American Red Cross Low Band Nationwide - RadioReference.com**
+Frequency	License	Type	Tone	Alpha Tag	Description	Mode	Tag
+47.420	KA3699	BM	146.2 PL	Red Cross 1	Primary (Nationwide) ARCTONE	FM	Emergency Ops
+47.500	WQEF834	BM	146.2 PL	Red Cross 2	Secondary (Nationwide) ARC-3	FM	Emergency Ops
+
+**International Space Station - RadioReference.com**
+Frequency	Input	License	Type	Tone	Tone In	Alpha Tag	Description	Mode	Tag
+145.800	145.200		RM			ISS Region 1	Voice Region 1	FM	Ham
+145.800	144.490		RM			ISS Region 2-3	Voice Region 2-3	FM	Ham
+145.825	 		BM			ISS VHF Packet	VHF Packet	Telm	Ham
+
+**Multi-Use Radio Service (MURS) - RadioReference.com**
+Frequency	License	Type	Tone	Alpha Tag	Description	Mode	Tag
+151.820		M		MURS 151.82	Common Use	FMN	Other
+151.880		M		MURS 151.88	Common Use	FMN	Other
+151.940		M		MURS 151.94	Common Use	FMN	Other
+154.570		M		MURS 154.57	Common Use/Blue Dot	FM	Other
+154.600		M		MURS 154.60	Common Use/Green Dot	FM	Other
+
+**Marine VHF - RadioReference.com**
+Frequency	License	Type	Tone	Alpha Tag	Description	Mode	Tag
+156.050		BM		Marine 01A/1001	01A - Port Operations and Commercial - New Orleans / Lower Mississippi	FM	Transportation
+156.250		BM		Marine 05A/1005	05A - Port Operations - Houston / New Orleans / Seattle	FM	Transportation
+156.300		BM		Marine 06	06 - Intership Safety	FM	Transportation
+156.350		BM		Marine 07A/1007	07A - Commercial	FM	Transportation
+156.400		BM		Marine 08	08 - Commercial Intership	FM	Transportation
+156.450		BM		Marine 09	09 - Boater Calling	FM	Transportation
+156.500		BM		Marine 10	10 - Commercial	FM	Transportation
+156.550		BM		Marine 11	11 - Commerical	FM	Transportation
+156.600		BM		Marine 12	12 - Port Operations	FM	Transportation
+156.650		BM		Marine 13	13 - Intership Navigation Safety (Bridges)	FM	Transportation
+156.700		BM		Marine 14	14 - Port Operations	FM	Transportation
+156.750		M		Marine 15	15 - Environmental / Class C EPIRB	FM	Transportation
+156.800		BM		Marine 16	16 - Hailing / Calling / Distress	FM	Transportation
+156.850		BM		Marine 17	17 - State/local government maritime	FM	Transportation
+156.900		BM		Marine 18A/1018	18A - Commercial	FM	Transportation
+156.950		BM		Marine 19A/1019	19A - Commercial	FM	Transportation
+157.000		BM		Marine 20A/1020	20A - Port Operations	FM	Transportation
+157.000		M		Marine 20 TX	20TX - Port Operations	FM	Transportation
+161.600		B		Marine 20 RX	20RX - Port Operations	FM	Transportation
+157.050		BM		Marine 21A/1021	21A - Coast Guard	FM	Federal
+157.100		BM		Marine 22A/1022	22A - Coast Guard Liaison/Maritime Safety Information Broadcasts	FM	Federal
+157.150		BM		Marine 23A/1023	23A - Coast Guard	FM	Federal
+157.200		M		Marine 24 TX	24TX - Marine Operator	FM	Transportation
+161.800		B		Marine 24 RX	24RX - Marine Operator	FM	Transportation
+157.250		M		Marine 25 TX	25TX - Marine Operator	FM	Transportation
+161.850		B		Marine 25 RX	25RX - Marine Operator	FM	Transportation
+157.300		M		Marine 26 TX	26TX - Marine Operator	FM	Transportation
+161.900		B		Marine 26 RX	26RX - Marine Operator	FM	Transportation
+157.350		M		Marine 27 TX	27TX - Marine Operator	FM	Transportation
+161.950		B		Marine 27 RX	27RX - Marine Operator	FM	Transportation
+157.400		M		Marine 28 TX	28TX - Marine Operator	FM	Transportation
+162.000		B		Marine 28 RX	28RX - Marine Operator	FM	Transportation
+156.175		BM		Marine 63A/1063	63A - Port Operations / Commercial - New Orleans / Lower Mississippi	FM	Transportation
+156.275		BM		Marine 65A/1065	65A - Port Operations	FM	Transportation
+156.325		BM		Marine 66A/1066	66A - Port Operations	FM	Transportation
+156.375		M		Marine 67	67 - Commercial intership (bridge-to-bridge)	FM	Transportation
+156.425		BM		Marine 68	68 - Non-Commercial	FM	Transportation
+156.475		BM		Marine 69	69 - Non-Commercial	FM	Transportation
+156.525		BM		Marine 70	70 - Digital Selective Calling (no voice)	FM	Data
+156.575		BM		Marine 71	71 - Non-Commercial	FM	Transportation
+156.625		M		Marine 72	72 - Non-Commercial (Intership only)	FM	Transportation
+156.675		BM		Marine 73	73 - Port Operations	FM	Transportation
+156.725		BM		Marine 74	74 - Port Operations	FM	Transportation
+156.875		M		Marine 77	77 - Port Operations (Intership only)	FM	Transportation
+156.925		BM		Marine 78A/1078	78A - Non-Commercial	FM	Transportation
+156.975		BM		Marine 79A/1079	79A - Commercial (Non-Commercial in Great Lakes only)	FM	Transportation
+157.025		BM		Marine 80A/1080	80A - Commercial (Non-Commercial in Great Lakes only)	FM	Transportation
+157.075		BM		Marine 81A/1081	81A - U.S. Government environmental protection	FM	Federal
+157.125		BM		Marine 82A/1082	82A - U.S. Government only	FM	Federal
+157.175		BM		Marine 83A/1083	83A - U.S. Coast Guard only	FM	Federal
+157.225		M		Marine 84 TX	84TX - Ship/shore (telephone)	FM	Other
+161.825		B		Marine 84 RX	84RX - Ship/shore (telephone)	FM	Other
+157.275		M		Marine 85 TX	85TX - Ship/shore (telephone)	FM	Other
+161.875		B		Marine 85 RX	85RX - Ship/shore (telephone)	FM	Other
+157.325		M		Marine 86 TX	86TX - Ship/shore (telephone)	FM	Other
+161.925		B		Marine 86 RX	86RX - Ship/shore (telephone)	FM	Other
+157.375		BM		Marine 87	87 - Ship/shore (telephone)	FM	Other
+157.425		M		Marine 88	88 - Commercial intership (bridge-to-bridge)	FM	Other
+
+**Wireless Microphones - RadioReference.com**
+Frequency	License	Type	Tone	Alpha Tag	Description	Mode	Tag
+169.445		M		Mic 169.445	Wireless Microphone	FM	Other
+169.505		M		Mic 169.505	Wireless Microphone	FM	Other
+170.245		M		Mic 170.245	Wireless Microphone	FM	Other
+170.305		M		Mic 170.305	Wireless Microphone	FM	Other
+171.045		M		Mic 171.045	Wireless Microphone	FM	Other
+171.105		M		Mic 171.105	Wireless Microphone	FM	Other
+171.845		M		Mic 171.845	Wireless Microphone	FM	Other
+171.905		M		Mic 171.905	Wireless Microphone	FM	Other
+
+**Law Enforcement - RadioReference.com**
+Frequency	License	Type	Tone	Alpha Tag	Description	Mode	Tag
+155.370		BM		LERN	Law Enforcement Intersystem in some areas	FMN	Law Tac
+173.075		BM		LoJack	LoJack Stolen Vehicle Recovery System	Telm	Data
+
 **** 118-138 MHz - AIR Band **** 
+
+**Aviation - RadioReference.com**
+Frequency	License	Type	Tone	Alpha Tag	Description	Mode	Tag
+121.500		M	CSQ	VHF Guard	Aircraft Emergency and Distress (VHF Guard)	AM	Aircraft
+121.775		M	CSQ	ELT Training	Emergency Locator Transmitter (ELT) Training Beacons	AM	Aircraft
+121.950		M	CSQ	AvSup 121.95	Aviation Support	AM	Business
+122.200		M	CSQ	Flt Watch Wx	Flight Watch Weather	AM	Aircraft
+122.700		M	CSQ	FAA 122.700	Unicom	AM	Aircraft
+122.725		M	CSQ	FAA 122.725	Unicom	AM	Aircraft
+122.750		M	CSQ	Air-Air 122.750	Aircraft air-to-air	AM	Aircraft
+122.775		M	CSQ	AvSup 122.775	Aviation Support	AM	Business
+122.800		M	CSQ	FAA 122.8	Unicom	AM	Aircraft
+122.850		M	CSQ	Multi 122.85	Multicom, Aviation Support	AM	Aircraft
+122.900		M	CSQ	Multi 122.9	Multicom, Search and Rescue Training	AM	Aircraft
+122.925		M	CSQ	Multi 122.925	Multicom - Special Use, Natural resource management	AM	Aircraft
+122.950		BM	CSQ	Unicom 122.95	Unicom - Controlled Airports	AM	Aircraft
+122.975		M	CSQ	FAA 122.975	Unicom	AM	Aircraft
+123.000		M	CSQ	FAA 123.000	Unicom	AM	Aircraft
+123.025		M	CSQ	Helo Air-Air	Helicopter Air-to-Air	AM	Aircraft
+123.050		M	CSQ	FAA 123.05	Unicom	AM	Aircraft
+123.075		M	CSQ	FAA 123.075	Unicom	AM	Aircraft
+123.100		M	CSQ	SAR Primary	Search and Rescue primary, ATC for special events secondary	AM	Aircraft
+123.125		M	CSQ	FlightTest123.12	Flight Test itinerant	AM	Business
+123.150		M	CSQ	FlightTest123.15	Flight Test itinerant	AM	Business
+123.175		M	CSQ	FlightTest123.17	Flight Test itinerant	AM	Business
+123.200		M	CSQ	FlightTest123.2	Flight Test	AM	Business
+123.225		M	CSQ	FlightTest123.22	Flight Test	AM	Business
+123.250		M	CSQ	FlightTest123.25	Flight Test	AM	Business
+123.275		M	CSQ	FlightTest123.27	Flight Test	AM	Business
+123.300		M	CSQ	AvSup 123.3	Aviation Support	AM	Business
+123.325		M	CSQ	FlightTest123.32	Flight Test	AM	Business
+123.350		M	CSQ	FlightTest123.35	Flight Test	AM	Business
+123.375		M	CSQ	FlightTest123.37	Flight Test	AM	Business
+123.400		M	CSQ	FlightTest123.4	Flight Test itinerant	AM	Business
+123.425		M	CSQ	FlightTest123.42	Flight Test itinerant	AM	Business
+123.450		M	CSQ	FlightTest123.45	Flight Test/Unofficial Air-to-Air	AM	Business
+123.475		M	CSQ	FlightTest123.47	Flight Test	AM	Business
+123.500		M	CSQ	AvSup 123.5	Aviation Support	AM	Business
+123.525		M	CSQ	FlightTest123.52	Flight Test	AM	Business
+123.550		M	CSQ	FlightTest123.55	Flight Test	AM	Business
+123.575		M	CSQ	FlightTest123.57	Flight Test	AM	Business
+126.200		M	CSQ	MilCom 126.2	Military Common (advisory)	AM	Aircraft
+129.525		M	CSQ	Deicing Comm	Deicing Common	AM	Business
+134.100		M	CSQ	MilCom 134.1	Military Common (advisory)	AM	Aircraft
+135.850		M	CSQ	FltIns135.85	FAA Flight Inspection	AM	Federal
+135.950		M	CSQ	FltIns135.95	FAA Flight Inspection	AM	Federal
 
 **** 162.40-162.55 MHz - Weather Band ****

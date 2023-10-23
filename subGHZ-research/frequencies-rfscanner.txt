@@ -1,4 +1,4 @@
-This file catalogs frequencies discovered through traditional RF scanner research.
+!This file catalogs frequencies discovered through traditional RF scanner research.
 
 FCC Frequency Explorer can be very useful for identifying unknown frequencies, see https://fccid.io/frequency-explorer.php
 

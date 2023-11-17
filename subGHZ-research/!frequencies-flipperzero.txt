@@ -9,6 +9,10 @@ UHF RFID tag frequncies listed below typically are passive RFID tags and require
 **** 300-348 MHz ****
 
 **** 387-464 MHz ****
+462.800 POCSAG PAGER SERVICE WASHCO MD MERITUS MEDICAL CENTER
+462.825 POCSAG PAGER SERVICE WASHCO MD BUSINESS
+462.850 POCSAG PAGER SERVICE WASHCO MD BUSINESS
+462.925 POCSAG PAGER SERVICE WASHCO MD BUSINESS
 
 **Short Range RFID Tags - 3–300 ft range
 433 - Short range devices - Defense applications, Underground Miner Tracking with active tags

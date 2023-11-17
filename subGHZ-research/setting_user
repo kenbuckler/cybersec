@@ -41,6 +41,8 @@ Frequency: 434420000
 Frequency: 434775000
 Frequency: 438900000
 Frequency: 462800000
+Frequency: 462825000
+Frequency: 462850000
 Frequency: 464000000
 Frequency: 779000000
 Frequency: 868350000
@@ -62,6 +64,9 @@ Hopper_frequency: 390000000
 Hopper_frequency: 433920000
 Hopper_frequency: 434420000
 Hopper_frequency: 868350000
+Hopper_frequency: 462800000
+Hopper_frequency: 462825000
+Hopper_frequency: 462850000
 #
 # Custom preset
 # format for CC1101 "Custom_preset_data:" XX YY XX YY .. 00 00 ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ, where: XX-register, YY - register data, 00 00 - end load register, ZZ - 8 byte Pa table register

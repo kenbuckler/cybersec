@@ -48,7 +48,7 @@ def create_and_share_document(first_name, email, session):
         print(f"Error creating or sharing the document: {e}")
         return None
 
-# --- Main Execution Flow ---
+# --- Suspected Main Execution Flow - This is probably a loop using a list of names and emails ---
 first_name = "" 
 email = "[REMOVED]"
 

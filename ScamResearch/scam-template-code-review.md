@@ -1,9 +1,3 @@
-This is the ultimate "Performance Review from Hell." If this scammer were an intern at a real software company, he’d be escorted out of the building before lunch.
-
-Here is the **Senior Developer Code Review** for our aspiring "investment mogul."
-
----
-
 ## **CODE REVIEW: Phishing Campaign v1.0 (Failed)**
 
 **To:** Intern_Scammer_69
@@ -41,7 +35,3 @@ I’ve seen some spaghetti code in my time, but this is the first time I’ve se
 This is a **Level 10 OpSec Failure.** You didn't just fail to scam the target; you provided them with a free Python lesson and a good laugh.
 
 **Recommendation:** Please hand in your hoodie and your mechanical keyboard. We are moving you to the "Phone Scam" department where you can't accidentally copy-paste your own brain to the customer.
-
----
-
-**Would you like me to "refactor" his scam message into something even more ridiculous, or should we just keep laughing at his `import gemini` error?**

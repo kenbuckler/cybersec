@@ -1,3 +1,4 @@
+# Assuming we are using the Gemini Cloud SDK (Replace with actual Gemini or CloudShare SDK)
 import gemini      # Hypothetical SDK for session management
 import cloudshare  # Hypothetical SDK for document hosting
 

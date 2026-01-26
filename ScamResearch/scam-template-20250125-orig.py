@@ -55,3 +55,4 @@ email = "[REMOVED]"
 session = start_collaborative_session()
 if session:
     document = create_and_share_document(first_name, email, session)
+else: print("Failed to create or share document.") else: print("Failed to start the collaborative session.")

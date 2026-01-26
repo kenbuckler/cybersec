@@ -22,7 +22,7 @@ def generate_investment_message():
     
     Best Regards;
     Mr. William Chalmers
-    Private Contact: mr.williamchalmers9l@hotmail.com 
+    Private Contact: [REMOVED] 
     """
     return message
 
@@ -49,7 +49,7 @@ def create_and_share_document(first_name, email, session):
 
 # --- Main Execution Flow ---
 first_name = "" 
-email = "mr.williamchalmers9l@hotmail.com"
+email = "[REMOVED]"
 
 session = start_collaborative_session()
 if session:

@@ -4,21 +4,257 @@ For details on RX and TX capabilities, see https://docs.flipperzero.one/sub-ghz/
 FCC Frequency Explorer can be very useful for identifying unknown frequencies, see https://fccid.io/frequency-explorer.php
 
 Note for RFID Tags:
-UHF RFID tag frequncies listed below typically are passive RFID tags and require an active reader broadcasting a signal which is either backscattered or responded to on a different frequncy by the RFID tag. This means you'll only be able to pick up the UHF RFID tags below when they pass close enough to an active reader. The tags are only activated when the broadcast from an active reader is strong enough to energize the RFID tag. This effect was used by the Soviet Union in the last 1940's to build a passive listening device which only transmitted audio when energized by an outside radio signal source. You can read more at https://hackaday.com/2015/12/08/theremins-bug/
+UHF RFID tag frequencies listed below typically are passive RFID tags and require an active reader
+broadcasting a signal which is either backscattered or responded to on a different frequency by the
+RFID tag. This means you'll only be able to pick up the UHF RFID tags below when they pass close
+enough to an active reader. The tags are only activated when the broadcast from an active reader is
+strong enough to energize the RFID tag. This effect was used by the Soviet Union in the late 1940s
+to build a passive listening device which only transmitted audio when energized by an outside radio
+signal source. You can read more at https://hackaday.com/2015/12/08/theremins-bug/
+
+Vulnerability notation used in this file:
+  [REPLAY]   - Fixed-code OOK signal; capture and retransmit to reproduce the original action
+  [ROLLJAM]  - Rolling-code signal vulnerable to Samy Kamkar's RollJam attack (jam+capture+replay)
+  [RELAY]    - Passive-entry system vulnerable to signal relay/amplification attack
+  [DECODE]   - Plaintext/unencrypted protocol; decodable with rtl_433, URH, or Flipper Zero
+  [JAM]      - Jamming this frequency denies service to dependent devices
+  [SPOOF]    - Unauthenticated protocol allows injection of fabricated packets
+  [TRACK]    - Device broadcasts a persistent unique ID enabling passive location tracking
+  [PRIVACY]  - Transmission discloses sensitive personal or household data with no encryption
+  [BRUTE]    - Fixed-code system with small keyspace; OpenSesame-class exhaustive attack feasible
+
+Subdriving session note (June 27, 2026, 17:13-22:31, Hagerstown MD area):
+  All frequencies marked [SD] were observed during a Flipper Zero wardriving session.
+  Hit count reflects number of independent observations during the 5h18m session.
+
 
 **** 130-176 MHz ****
-152.180 POCSAG PAGER SERVICE SCHUYLKILL MOBILE FONE, INC.
+
+152.180  POCSAG PAGER SERVICE  SCHUYLKILL MOBILE FONE, INC.
+
 
 **** 300-348 MHz ****
+  Protocol notes for this band: Nearly all consumer devices use OOK (On-Off Keying) or ASK
+  (Amplitude Shift Keying) modulation. Legacy garage and gate remotes in this band overwhelmingly
+  use fixed codes with no rolling-code protection, making them trivially vulnerable to replay and
+  OpenSesame-class brute-force attacks. Modern LiftMaster/Chamberlain Security+ 2.0 units on
+  310/315/390 MHz do use rolling codes; older units on 303/304/309/312/318/320 MHz typically do not.
+
+302.757  Gate / commercial entry remote (apartment complexes, storage facilities) [SD x3]
+         Protocol: OOK fixed code
+         [REPLAY] [BRUTE] Capture and retransmit to open gate. Small DIP-code keyspace (~4096).
+
+303.000  Garage door opener - generic multi-code DIP switch remote (Linear, Stanley) [SD x2]
+         Protocol: OOK fixed code (9-12 DIP switches)
+         [REPLAY] [BRUTE] OpenSesame attack opens fixed-code door in <8 seconds.
+
+303.875  LiftMaster / Chamberlain legacy garage door (pre-2011 fixed-code units) [SD x3]
+         Protocol: OOK fixed code
+         [REPLAY] [BRUTE] Most targeted legacy Chamberlain frequency. OpenSesame demonstrated live
+         on this frequency. Residential garage frequently provides direct interior home access.
+
+303.900  Multi-code legacy garage door openers (Linear, Stanley, Moore-O-Matic, older Chamberlain)
+         [SD x4 - most observed frequency in session]
+         Protocol: OOK fixed code
+         [REPLAY] [BRUTE] Highest hit count of any frequency. Fixed-code units with no anti-replay.
+
+304.250  Automotive key fob (older VW) / garage door overlap [SD x1]
+         Protocol: OOK or PWM
+         [RELAY] (vehicle fob) [REPLAY] (gate/garage)
+
+307.000  Residential key fob / generic consumer remote [SD x1]
+         Protocol: OOK fixed code
+         [REPLAY]
+
+307.500  Ford / GM / Chrysler vehicle keyless entry and remote start [SD x3]
+         Protocol: Rolling code (KeeLoq)
+         [ROLLJAM] Jam + capture two codes; replay first code later. Demonstrated DEF CON 23.
+         [RELAY] Passive-entry vehicles: relay fob signal from inside home to car outside.
+         Note: KeeLoq 64-bit manufacturer key theoretically recoverable via side-channel (2008).
+
+307.800  Consumer RF remote / garage door opener [SD x1]
+         Protocol: OOK
+         [REPLAY]
+
+309.000  Linear gate operator remote / commercial access control [SD x2]
+         Protocol: OOK fixed code
+         [REPLAY] [BRUTE]
+
+310.000  Automotive key fob (Chevrolet, Buick, Cadillac, GMC) / TPMS / gate remote [SD x4]
+         Protocol: Rolling code (KeeLoq) for fobs; OOK fixed for gate; TPMS broadcast only
+         [ROLLJAM] (vehicle fobs)
+         [RELAY] (passive-entry GM vehicles)
+         [TRACK] TPMS sensors broadcast unique ID every 30-60 sec while moving. Enables passive
+                 vehicle tracking without GPS. Mandated in all US vehicles from 2008.
+         [SPOOF] TPMS: inject false tire pressure alerts; can trigger dash warnings and in
+                 vulnerable vehicles affect automatic braking (CVE-2015-0562 class).
+
+312.000  Automotive key fob (GM) / residential garage door [SD x2]
+         Protocol: Rolling code (KeeLoq) / OOK fixed
+         [ROLLJAM] (fob) [REPLAY] (garage)
+
+312.100  Garage door opener / gate transmitter [SD x1]
+         Protocol: OOK fixed code
+         [REPLAY]
+
+313.000  GM / Ford / Chrysler key fob, remote start emphasis [SD x3]
+         Protocol: Rolling code (KeeLoq)
+         [ROLLJAM] [RELAY]
+
+313.850  GM remote start / keyless entry variant [SD x1]
+         Protocol: Rolling code (KeeLoq)
+         [ROLLJAM] [RELAY]
+
+314.000  Automotive key fob (GM, Chrysler) / residential gate / garage [SD x3]
+         Protocol: Rolling code (automotive); OOK fixed (gate/garage)
+         [ROLLJAM] (fob) [RELAY] (fob) [REPLAY] (gate/garage)
+
+314.350  Mazda / older Ford key fob (alphanumeric rolling code variant) [SD x2]
+         Protocol: Rolling code
+         [ROLLJAM] [RELAY] Mazda/Ford fobs at this frequency are common relay theft targets.
+
+315.000  Standard North American automotive key fob (Toyota, Honda, Nissan, Subaru) [SD x2]
+         Chamberlain myQ garage / TPMS sensor
+         Protocol: Rolling code (automotive); OOK (garage); broadcast only (TPMS)
+         [ROLLJAM] (fob) [RELAY] (passive-entry vehicles) [TRACK] (TPMS) [REPLAY] (garage)
+
+318.000  Linear gate operator / commercial access panel remote [SD x1]
+         Protocol: OOK fixed code (typically 10-bit)
+         [REPLAY] [BRUTE]
+
+320.000  LiftMaster / Chamberlain Security+ garage door / gated community entry [SD x4]
+         Protocol: Security+ rolling code (post-2011) OR OOK fixed code (older units)
+         [REPLAY] [BRUTE] for legacy fixed-code units on this frequency.
+         Note: Security+ rolling code units are significantly harder to attack; verify unit age.
+
+320.150  Linear gate operator variant [SD x1]
+         Protocol: OOK fixed code
+         [REPLAY]
+
+345.000  Honeywell ADEMCO / 2GIG wireless home security sensors [SD x1]
+         (door/window contacts, PIR motion detectors - signature Honeywell frequency)
+         Protocol: FSK / 2FSK, Honeywell ADEMCO proprietary - NO ENCRYPTION
+         [DECODE] rtl_433 decodes ADEMCO packets in real-time: zone ID, sensor type, alert state,
+                  battery level - all in plaintext. No authentication.
+         [JAM] Jamming 345 MHz prevents sensor packets reaching the alarm panel. Door/window
+               can be opened without triggering alarm. Documented in residential burglary cases.
+         [REPLAY] Retransmit captured "all clear" packet to suppress zone alert at panel.
+         [PRIVACY] Real-time occupancy: motion sensor activations reveal whether home is occupied,
+                   sleep patterns, and room-by-room presence. Entry/exit events visible passively.
+         VULN: No fix available in legacy ADEMCO hardware. Replace with Honeywell PROSIXCT or
+               2GIG RE222 encrypted sensors + Honeywell Lyric / Resideo PRO-2000 panel.
+
 
 **** 387-464 MHz ****
-453.650 POCSAG PAGER SERVICE WASHCO MD GOVT
-462.800 POCSAG PAGER SERVICE WASHCO MD MERITUS MEDICAL CENTER
-462.825 POCSAG PAGER SERVICE WASHCO MD BUSINESS
-462.850 POCSAG PAGER SERVICE WASHCO MD BUSINESS
-462.925 POCSAG PAGER SERVICE WASHCO MD BUSINESS
 
-**Short Range RFID Tags - 3–300 ft range
+387.000  Wireless remote / generic consumer alarm or smart home module [SD x1]
+         Protocol: OOK
+         [REPLAY]
+
+390.000  LiftMaster / Chamberlain older gated community entry (390 MHz legacy Security+) [SD x3]
+         Protocol: OOK or early rolling code
+         [REPLAY] [BRUTE] Legacy units on this frequency often still fixed-code.
+
+418.000  UK/European consumer wireless devices - legacy alarm PIRs, older car fobs, door chimes
+         [SD x1]
+         Protocol: OOK fixed code (UK SRD)
+         [REPLAY] UK 418 MHz devices are almost exclusively fixed-code with no rolling protection.
+
+431.000  Amateur radio 70cm band - lower edge, repeater or mobile unit [SD x1]
+         Protocol: FM voice, APRS, DMR, D-STAR, Fusion
+         Note: All amateur transmissions are unencrypted by law.
+         [PRIVACY] APRS beacons broadcast operator GPS position and call sign in plaintext.
+                   See https://aprs.fi for live APRS tracking.
+
+431.500  Amateur radio 70cm band - repeater output or mobile [SD x1]
+         Protocol: FM voice or digital modes
+         (See 431.000 notes)
+
+433.075  Consumer ISM 433 MHz - wireless weather station, outdoor sensor, doorbell [SD x3]
+         Protocol: OOK, no encryption or authentication
+         [REPLAY] [DECODE] rtl_433 decodes Oregon Scientific, AcuRite, La Crosse and many others.
+         [SPOOF] Inject false temperature/humidity; can trigger incorrect smart-home automation.
+
+433.220  European car key fob variant / generic 433 MHz remote [SD x1]
+         Protocol: Rolling code or OOK
+         [RELAY] (car fob) [REPLAY] (fixed-code remote)
+
+433.889  OOK consumer device - weather station, wireless sensor, aftermarket car alarm [SD x2]
+         Protocol: OOK, no encryption
+         [DECODE] [REPLAY]
+
+433.920  Universal LPD433 center frequency - most common global consumer electronics frequency
+         [SD x2]
+         Devices: wireless doorbells, weather stations, wireless outlets, tire monitors, smart
+         home switches, pet trackers, cheap key fobs, meat thermometers, soil sensors
+         Protocol: OOK AM, virtually no authentication or encryption across device ecosystem
+         [REPLAY] Doorbell spoofing, remote outlet toggling, gate/lock remotes
+         [DECODE] rtl_433 supports 100+ device protocols on this frequency
+         [SPOOF] Weather station / sensor data injection
+         [TRACK] Pet tracker signals can locate animals and associate to owner address
+         Note: Flipper Zero has built-in 433.920 MHz capture/replay support.
+
+433 (band) - Short range devices - Defense applications, Underground Miner Tracking with active tags
+
+434.176  Oregon Scientific weather station / vehicle-adjacent IoT sensor [SD x2]
+         Protocol: OOK, no encryption
+         [DECODE] [SPOOF]
+
+434.190  Consumer electronics - 433 MHz variant remote or sensor [SD x1]
+         Protocol: OOK
+         [REPLAY]
+
+434.390  European car key fob (Renault, Peugeot, Citroën variants) / generic ISM device [SD x4]
+         Most observed 433 MHz frequency in session.
+         Protocol: Rolling code (car fob) or OOK (generic device)
+         [RELAY] (car fob) [ROLLJAM] (rolling-code fob) [REPLAY] (generic device)
+
+434.620  ISM band consumer device / 433 MHz sensor [SD x2]
+         Protocol: OOK
+         [DECODE] [REPLAY]
+
+434.775  Smart home sensor / IoT node / multi-band IoT device [SD x2]
+         Protocol: OOK or proprietary
+         [REPLAY] [DECODE]
+
+438.900  Amateur radio 70cm / ISM overlap - repeater output or consumer device [SD x1]
+         Protocol: FM voice (ham) or OOK (consumer)
+         (See 431.000 notes for ham; see 433.920 notes for consumer)
+
+440.175  Amateur radio 70cm band - first signal of session, 17:13 [SD x1]
+         Protocol: FM voice, APRS, digital voice modes
+         [PRIVACY] APRS GPS beacon discloses operator location and call sign.
+
+453.650  POCSAG PAGER SERVICE  WASHCO MD GOVT
+         [DECODE] POCSAG is unencrypted; full message content readable with rtl_433 or PDW.
+         [PRIVACY] Government operational paging - message content may include sensitive dispatches.
+
+462.750  FRS/GMRS walkie-talkie - GMRS Channel 20 / FRS adjacent [SD x3]
+         Observed 3 times in 40 minutes (19:05, 19:25, 19:42) - likely a nearby vehicle with
+         sustained radio use (convoy, security team, or event staff).
+         Protocol: NFM (narrowband FM), unencrypted. CTCSS/DCS tone squelch is NOT encryption.
+         [DECODE] All FRS/GMRS is publicly receivable - no legal or technical barrier.
+         [PRIVACY] Unencrypted voice: conversations, tactical coordination, personnel identities,
+                   and location information are audible to any nearby receiver.
+         Note: CTCSS/DCS squelch tones only suppress audio on the receiver side; the transmission
+               remains fully accessible to any scanner not filtering that tone.
+
+462.800  POCSAG PAGER SERVICE  WASHCO MD MERITUS MEDICAL CENTER
+         [DECODE] POCSAG unencrypted. Hospital paging may include patient names, room numbers,
+                  clinical urgency codes, and staff call signs.
+         [PRIVACY] HIPAA-sensitive: medical facility paging content is protected health information
+                   yet transmitted openly over the air.
+
+462.825  POCSAG PAGER SERVICE  WASHCO MD BUSINESS
+         [DECODE] [PRIVACY] (See 453.650 notes)
+
+462.850  POCSAG PAGER SERVICE  WASHCO MD BUSINESS
+         [DECODE] [PRIVACY] (See 453.650 notes)
+
+462.925  POCSAG PAGER SERVICE  WASHCO MD BUSINESS
+         [DECODE] [PRIVACY] (See 453.650 notes)
+
+**Short Range RFID Tags - 3-300 ft range
 433 - Short range devices - Defense applications, Underground Miner Tracking with active tags
 
 **Common Cellular Phone Frequencies - commonly detected as spikes in Spectrum Analyzer
@@ -28,6 +264,72 @@ UHF RFID tag frequncies listed below typically are passive RFID tags and require
 
 **** 779-928 MHz ****
 
-**ISM Band RFID Tags - 3–40 ft range
-865–868 (Europe) - EAN, various standards; used by railroads
-902–928 (North America) - various standards; used by railroads, Gen 2 UHF 902-928 MHz RFID Tags
+779.000  SRD / 700-800 MHz adjacent - imported industrial remote or commercial wireless audio
+         [SD x1]
+         Protocol: FSK, OOK, or proprietary digital
+         [REPLAY] If OOK. Note: jamming at 779 MHz could bleed into adjacent 700 MHz public
+                  safety band - exercise caution.
+
+868.350  LoRa / LoRaWAN IoT node or European-spec smart device [SD x1]
+         Protocol: LoRa chirp spread spectrum or FSK SRD (EU863-870 band)
+         [DECODE] gr-lora, LoRa hardware (TTGO LoRa32, LimeSDR) can capture/decode packets.
+                  AppSKey-encrypted payload (AES-128) in LoRaWAN 1.0+; metadata visible in clear.
+         [SPOOF] Rogue gateway: LoRa nodes with OTAA will attempt to join any available gateway.
+         [REPLAY] LoRaWAN 1.0.x join request replay (predictable DevNonce counter). Forces
+                  device re-provisioning, drops legitimate session. (CVE-2019-4399 class)
+         [PRIVACY] IoT telemetry: may include asset location, environmental readings, metering data.
+
+868.400  Industrial asset tag / LoRaWAN node / commercial lighting control [SD x1]
+         Protocol: LoRa or proprietary FSK (EU LoRaWAN Channel 2 area)
+         (See 868.350 notes)
+         [PRIVACY] Asset location data disclosure if device is a tracking beacon.
+
+868.460  LoRaWAN gateway / smart energy node - EU LoRaWAN Channel 2 (868.5 MHz approx) [SD x4]
+         Most observed 868 MHz frequency in session. Persistent recurrence (17:13 to 21:00)
+         suggests fixed infrastructure (gateway) along the route, not a mobile device.
+         Protocol: LoRaWAN, FSK, or Sigfox uplink
+         (See 868.350 notes for full attack surface)
+         [PRIVACY] Smart energy metering telemetry; usage data infers household occupancy patterns.
+
+868.800  European SRD industrial IoT / specialized automation [SD x2]
+         Observed 17:13 and 19:12 (2-hour gap) - consistent with fixed installation.
+         Protocol: FSK or LoRa
+         (See 868.350 notes)
+
+868.950  European SRD / LoRaWAN EU Channel 7 / imported commercial sensor [SD x3]
+         Protocol: LoRaWAN or proprietary FSK
+         (See 868.350 notes)
+
+902-928  ISM Band (North America) - various standards; used by railroads
+         Gen 2 UHF 902-928 MHz RFID Tags - 3-40 ft range
+
+906.400  Itron / Landis+Gyr ERT smart meter (gas, electric, or water) [SD x2]
+         Primary frequency for US Automatic Meter Reading (AMR) / AMI network. Meters broadcast
+         every ~30 seconds. No encryption. No authentication.
+         Protocol: Manchester-encoded OOK, ERT protocol
+         [DECODE] rtlamr (open source, RTL-SDR) decodes Itron ERT packets in real-time. Output
+                  includes: Meter ID, commodity type, consumption reading, tamper status.
+         [PRIVACY] CRITICAL: Energy/gas/water consumption broadcast 24/7 in plaintext to any
+                   receiver in range. Consumption data enables: occupancy detection (is anyone
+                   home?), sleep/wake schedule inference, appliance usage patterns, vacancy
+                   detection for burglary targeting. Documented since 2012; no OTA fix possible
+                   on legacy ERT meters. Some utilities offer AMI upgrade programs on request.
+         Note: No replay or injection applicable - ERT is broadcast-only.
+
+915.000  US ISM band center - multiple device classes [SD x3]
+         Device candidates: E-ZPass / SunPass / FasTrak RFID toll transponders, LoRa US915 nodes,
+         Zigbee 915 MHz devices, smart building sensors, RFID inventory tags, industrial IoT
+         Protocol: FHSS, LoRa, Zigbee, or proprietary narrowband
+         [TRACK] E-ZPass transponders broadcast unique vehicle ID whenever interrogated by any
+                 915 MHz reader - not only at toll plazas. Passive readers deployed at arbitrary
+                 locations can track individual vehicles without consent. Linked to registration
+                 data via state DOT. Documented by security researchers since 2013; unauthorized
+                 readers observed deployed on city streets (NYC, 2013).
+         [DECODE] LoRa US915: same attack surface as 868 MHz LoRaWAN (see above).
+         [REPLAY] LoRa US915 join request replay (LoRaWAN 1.0.x, predictable DevNonce).
+         [DECODE] Zigbee: network sniffing if AES-128 link key not properly managed.
+         [DECODE] RFID inventory tags: passive tag ID capture with compatible reader hardware.
+
+865-868  ISM Band RFID Tags - 3-40 ft range (Europe)
+         EAN, various standards; used by railroads
+         [TRACK] Passive tag capture requires active reader in proximity.
